@@ -1,0 +1,12 @@
+# Requirements for Data Structures & Algorithms Implementation
+
+# For running Python implementations
+# No external dependencies required for basic data structures
+
+# For running Python tests
+# Python's built-in unittest module is used, so no additional dependencies needed
+
+# For Java development (if using Maven)
+# Note: This is just for reference. Actual Java project would need pom.xml for Maven
+# junit-jupiter-api = 5.8.1
+# junit-jupiter-engine = 5.8.1

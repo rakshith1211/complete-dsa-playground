@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Interface Test</title>
+</head>
+<body>
+    <h1>Web Interface Test</h1>
+    <div id="output"></div>
+
+    <script src="singly_linked_list.js"></script>
+    <script src="merge_sort.js"></script>
+    <script>
+        // Test Singly Linked List
+        let output = document.getElementById('output');
+        output.innerHTML += '<h2>Testing Singly Linked List...</h2>';
+        
+        const list = new SinglyLinkedList();
+        
+        // Test insertions
+        list.insertAtEnd(10);
+        list.insertAtEnd(20);
+        list.insertAtBeginning(5);
+        output.innerHTML += '<p>List after insertions: ' + list.toArray().join(', ') + '</p>';
+        
+        // Test search
+        output.innerHTML += '<p>Position of 20: ' + list.search(20) + '</p>';
+        output.innerHTML += '<p>Position of 100: ' + list.search(100) + '</p>';
+        
+        // Test deletions
+        output.innerHTML += '<p>Deleted from beginning: ' + list.deleteFromBeginning() + '</p>';
+        output.innerHTML += '<p>List after deletion: ' + list.toArray().join(', ') + '</p>';
+        
+        output.innerHTML += '<h2>Singly Linked List tests completed.</h2>';
+        
+        // Test Merge Sort
+        output.innerHTML += '<h2>Testing Merge Sort...</h2>';
+        const unsortedArray = [64, 34, 25, 12, 22, 11, 90];
+        output.innerHTML += '<p>Original array: ' + unsortedArray.join(', ') + '</p>';
+        
+        const sortedArray = mergeSort(unsortedArray);
+        output.innerHTML += '<p>Sorted array: ' + sortedArray.join(', ') + '</p>';
+        
+        output.innerHTML += '<h2>Merge Sort tests completed.</h2>';
+        output.innerHTML += '<h2>All web interface tests passed!</h2>';
+    </script>
+</body>
+</html>

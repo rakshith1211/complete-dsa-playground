@@ -1,0 +1,66 @@
+# Complete DSA Makefile
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+SRCDIR = src/c
+TESTDIR = tests
+OBJDIR = obj
+BINDIR = bin
+
+# Create directories
+$(shell mkdir -p $(OBJDIR) $(BINDIR))
+
+# Source files
+SOURCES = $(SRCDIR)/data_structures/singly_linked_list.c \
+          $(SRCDIR)/data_structures/doubly_linked_list.c \
+          $(SRCDIR)/data_structures/stack.c \
+          $(SRCDIR)/data_structures/queue.c \
+          $(SRCDIR)/data_structures/bst.c \
+          $(SRCDIR)/data_structures/graph.c \
+          $(SRCDIR)/algorithms/merge_sort.c \
+          $(SRCDIR)/algorithms/sorting.c \
+          $(SRCDIR)/algorithms/searching.c
+
+OBJECTS = $(SOURCES:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+
+# Main targets
+all: demo test
+
+demo: $(BINDIR)/demo
+	@echo "Running complete DSA demo..."
+	@$(BINDIR)/demo
+
+$(BINDIR)/demo: $(OBJECTS) $(OBJDIR)/main_complete.o
+	$(CC) $(CFLAGS) -o $@ $^
+
+$(OBJDIR)/main_complete.o: $(SRCDIR)/main_complete.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Test targets
+test: test-c test-python test-java
+
+test-c:
+	@echo "Running C tests..."
+	@gcc -o $(BINDIR)/test_c $(TESTDIR)/test_singly_linked_list_c.c $(SRCDIR)/data_structures/singly_linked_list.c
+	@$(BINDIR)/test_c
+
+test-python:
+	@echo "Running Python tests..."
+	@cd $(TESTDIR) && python test_singly_linked_list_python.py
+	@cd $(TESTDIR) && python test_sorting_python.py
+
+test-java:
+	@echo "Running Java tests..."
+	@javac -cp ".:junit-platform-console-standalone-1.8.2.jar" $(TESTDIR)/*.java $(SRCDIR)/java/data_structures/*.java
+	@java -cp ".:junit-platform-console-standalone-1.8.2.jar" org.junit.platform.console.ConsoleLauncher --scan-classpath
+
+clean:
+	rm -rf $(OBJDIR) $(BINDIR)
+	rm -f $(TESTDIR)/*.class
+	rm -f $(SRCDIR)/java/data_structures/*.class
+
+.PHONY: all demo test test-c test-python test-java clean

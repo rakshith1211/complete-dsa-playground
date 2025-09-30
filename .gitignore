@@ -1,0 +1,30 @@
+# Compiled files
+*.exe
+*.out
+*.o
+*.class
+*.pyc
+__pycache__/
+
+# Build directories
+bin/
+obj/
+build/
+dist/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
