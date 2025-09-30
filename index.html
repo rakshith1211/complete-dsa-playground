@@ -45,8 +45,29 @@
                     <button id="ll-search">Search</button>
                     <button id="ll-display">Display</button>
                 </div>
-                <div id="ll-visualization" class="visualization"></div>
+                <div id="ll-visualization" class="visualization">Singly Linked List Visualization</div>
                 <div id="ll-output" class="output"></div>
+            </div>
+            
+            <div id="doubly" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="dll-value" placeholder="Value">
+                    <button id="dll-insert-front">Insert Front</button>
+                    <button id="dll-insert-back">Insert Back</button>
+                    <button id="dll-display">Display</button>
+                </div>
+                <div id="dll-visualization" class="visualization">Doubly Linked List Visualization</div>
+                <div id="dll-output" class="output"></div>
+            </div>
+            
+            <div id="circular" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="cll-value" placeholder="Value">
+                    <button id="cll-insert">Insert</button>
+                    <button id="cll-display">Display</button>
+                </div>
+                <div id="cll-visualization" class="visualization">Circular Linked List Visualization</div>
+                <div id="cll-output" class="output"></div>
             </div>
         </section>
 
@@ -68,8 +89,45 @@
                     <button id="stack-peek">Peek</button>
                     <button id="stack-display">Display</button>
                 </div>
-                <div id="stack-visualization" class="visualization"></div>
+                <div id="stack-visualization" class="visualization">Stack Visualization (LIFO)</div>
                 <div id="stack-output" class="output"></div>
+            </div>
+            
+            <div id="queue" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="queue-value" placeholder="Value">
+                    <button id="queue-enqueue">Enqueue</button>
+                    <button id="queue-dequeue">Dequeue</button>
+                    <button id="queue-front">Front</button>
+                    <button id="queue-display">Display</button>
+                </div>
+                <div id="queue-visualization" class="visualization">Queue Visualization (FIFO)</div>
+                <div id="queue-output" class="output"></div>
+            </div>
+            
+            <div id="priority-queue" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="pq-value" placeholder="Value">
+                    <input type="number" id="pq-priority" placeholder="Priority">
+                    <button id="pq-enqueue">Enqueue</button>
+                    <button id="pq-dequeue">Dequeue</button>
+                    <button id="pq-display">Display</button>
+                </div>
+                <div id="pq-visualization" class="visualization">Priority Queue Visualization</div>
+                <div id="pq-output" class="output"></div>
+            </div>
+            
+            <div id="deque" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="deque-value" placeholder="Value">
+                    <button id="deque-add-front">Add Front</button>
+                    <button id="deque-add-rear">Add Rear</button>
+                    <button id="deque-remove-front">Remove Front</button>
+                    <button id="deque-remove-rear">Remove Rear</button>
+                    <button id="deque-display">Display</button>
+                </div>
+                <div id="deque-visualization" class="visualization">Deque Visualization</div>
+                <div id="deque-output" class="output"></div>
             </div>
         </section>
 
@@ -92,8 +150,30 @@
                     <button id="bst-preorder">Preorder</button>
                     <button id="bst-postorder">Postorder</button>
                 </div>
-                <div id="bst-visualization" class="visualization"></div>
+                <div id="bst-visualization" class="visualization">Binary Search Tree Visualization</div>
                 <div id="bst-output" class="output"></div>
+            </div>
+            
+            <div id="avl" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="avl-value" placeholder="Value">
+                    <button id="avl-insert">Insert</button>
+                    <button id="avl-inorder">Inorder</button>
+                </div>
+                <div id="avl-visualization" class="visualization">AVL Tree Visualization (Self-Balancing)</div>
+                <div id="avl-output" class="output"></div>
+            </div>
+            
+            <div id="heap" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="heap-value" placeholder="Value">
+                    <button id="heap-insert">Insert</button>
+                    <button id="heap-extract">Extract Min</button>
+                    <button id="heap-peek">Peek</button>
+                    <button id="heap-display">Display</button>
+                </div>
+                <div id="heap-visualization" class="visualization">Min Heap Visualization</div>
+                <div id="heap-output" class="output"></div>
             </div>
         </section>
 
@@ -116,8 +196,36 @@
                     <button id="graph-display">Display</button>
                     <button id="graph-clear">Clear</button>
                 </div>
-                <div id="graph-visualization" class="visualization"></div>
+                <div id="graph-visualization" class="visualization">Graph Visualization (Adjacency List)</div>
                 <div id="graph-output" class="output"></div>
+            </div>
+            
+            <div id="bfs" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="bfs-start" placeholder="Start Vertex">
+                    <button id="bfs-execute">Run BFS</button>
+                </div>
+                <div id="bfs-visualization" class="visualization">Breadth-First Search Visualization</div>
+                <div id="bfs-output" class="output"></div>
+            </div>
+            
+            <div id="dfs" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="dfs-start" placeholder="Start Vertex">
+                    <button id="dfs-execute">Run DFS</button>
+                </div>
+                <div id="dfs-visualization" class="visualization">Depth-First Search Visualization</div>
+                <div id="dfs-output" class="output"></div>
+            </div>
+            
+            <div id="dijkstra" class="tab-content">
+                <div class="operations">
+                    <input type="number" id="dijkstra-start" placeholder="Start Vertex">
+                    <input type="number" id="dijkstra-end" placeholder="End Vertex">
+                    <button id="dijkstra-execute">Find Shortest Path</button>
+                </div>
+                <div id="dijkstra-visualization" class="visualization">Dijkstra's Algorithm Visualization</div>
+                <div id="dijkstra-output" class="output"></div>
             </div>
         </section>
 
@@ -134,15 +242,69 @@
                 <button class="tab-btn" data-tab="radix">Radix</button>
             </div>
             
-            <div id="merge" class="tab-content active">
+            <div id="bubble" class="tab-content active">
                 <div class="operations">
                     <input type="text" id="sort-input" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
                     <button id="sort-execute">Sort</button>
                     <button id="sort-step">Step Through</button>
                     <button id="sort-reset">Reset</button>
                 </div>
-                <div id="sort-visualization" class="visualization"></div>
+                <div id="sort-visualization" class="visualization">Bubble Sort Visualization - O(n²)</div>
                 <div id="sort-output" class="output"></div>
+            </div>
+            
+            <div id="selection" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-sel" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-sel">Sort</button>
+                </div>
+                <div id="sort-visualization-sel" class="visualization">Selection Sort Visualization - O(n²)</div>
+                <div id="sort-output-sel" class="output"></div>
+            </div>
+            
+            <div id="insertion" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-ins" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-ins">Sort</button>
+                </div>
+                <div id="sort-visualization-ins" class="visualization">Insertion Sort Visualization - O(n²)</div>
+                <div id="sort-output-ins" class="output"></div>
+            </div>
+            
+            <div id="merge" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-merge" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-merge">Sort</button>
+                </div>
+                <div id="sort-visualization-merge" class="visualization">Merge Sort Visualization - O(n log n)</div>
+                <div id="sort-output-merge" class="output"></div>
+            </div>
+            
+            <div id="quick" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-quick" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-quick">Sort</button>
+                </div>
+                <div id="sort-visualization-quick" class="visualization">Quick Sort Visualization - O(n log n) avg</div>
+                <div id="sort-output-quick" class="output"></div>
+            </div>
+            
+            <div id="heap-sort" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-heap" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-heap">Sort</button>
+                </div>
+                <div id="sort-visualization-heap" class="visualization">Heap Sort Visualization - O(n log n)</div>
+                <div id="sort-output-heap" class="output"></div>
+            </div>
+            
+            <div id="radix" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="sort-input-radix" placeholder="Enter numbers: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <button id="sort-execute-radix">Sort</button>
+                </div>
+                <div id="sort-visualization-radix" class="visualization">Radix Sort Visualization - O(d×(n+k))</div>
+                <div id="sort-output-radix" class="output"></div>
             </div>
         </section>
 
@@ -155,15 +317,38 @@
                 <button class="tab-btn" data-tab="hash">Hash Table</button>
             </div>
             
-            <div id="binary" class="tab-content active">
+            <div id="linear" class="tab-content active">
+                <div class="operations">
+                    <input type="text" id="search-array-linear" placeholder="Array: 64,34,25,12,22,11,90" value="64,34,25,12,22,11,90">
+                    <input type="number" id="search-target-linear" placeholder="Target">
+                    <button id="search-execute-linear">Search</button>
+                </div>
+                <div id="search-visualization-linear" class="visualization">Linear Search Visualization - O(n)</div>
+                <div id="search-output-linear" class="output"></div>
+            </div>
+            
+            <div id="binary" class="tab-content">
                 <div class="operations">
                     <input type="text" id="search-array" placeholder="Sorted array: 1,3,5,7,9,11,13" value="1,3,5,7,9,11,13">
                     <input type="number" id="search-target" placeholder="Target">
                     <button id="search-execute">Search</button>
                     <button id="search-step">Step Through</button>
                 </div>
-                <div id="search-visualization" class="visualization"></div>
+                <div id="search-visualization" class="visualization">Binary Search Visualization - O(log n)</div>
                 <div id="search-output" class="output"></div>
+            </div>
+            
+            <div id="hash" class="tab-content">
+                <div class="operations">
+                    <input type="text" id="hash-key" placeholder="Key">
+                    <input type="text" id="hash-value" placeholder="Value">
+                    <button id="hash-set">Set</button>
+                    <button id="hash-get">Get</button>
+                    <button id="hash-remove">Remove</button>
+                    <button id="hash-display">Display</button>
+                </div>
+                <div id="hash-visualization" class="visualization">Hash Table Visualization - O(1) avg</div>
+                <div id="hash-output" class="output"></div>
             </div>
         </section>
     </main>
@@ -185,7 +370,14 @@
             </div>
             <div class="project-info">
                 <h3>📈 Project Stats</h3>
-                <p>100% Complete | Interview Ready | Production Quality</p>
+                <p>Complete implementation of fundamental CS concepts</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app_complete.js"></script>
+</body>
+</html> <p>100% Complete | Interview Ready | Production Quality</p>
             </div>
         </div>
     </footer>

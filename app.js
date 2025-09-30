@@ -51,6 +51,126 @@ function initializeNavigation() {
     });
 }
 
+// Singly Linked List Implementation
+class SinglyLinkedListNode {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+class SinglyLinkedList {
+    constructor() {
+        this.head = null;
+        this.size = 0;
+    }
+    
+    insertFront(data) {
+        const newNode = new SinglyLinkedListNode(data);
+        newNode.next = this.head;
+        this.head = newNode;
+        this.size++;
+        return `Inserted ${data} at front`;
+    }
+    
+    insertBack(data) {
+        const newNode = new SinglyLinkedListNode(data);
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let current = this.head;
+            while (current.next) current = current.next;
+            current.next = newNode;
+        }
+        this.size++;
+        return `Inserted ${data} at back`;
+    }
+    
+    deleteFront() {
+        if (!this.head) return "List is empty";
+        const data = this.head.data;
+        this.head = this.head.next;
+        this.size--;
+        return `Deleted ${data} from front`;
+    }
+    
+    search(data) {
+        let current = this.head;
+        let position = 0;
+        while (current) {
+            if (current.data === data) return `Found ${data} at position ${position}`;
+            current = current.next;
+            position++;
+        }
+        return `${data} not found`;
+    }
+    
+    display() {
+        if (!this.head) return "List is empty";
+        const elements = [];
+        let current = this.head;
+        while (current) {
+            elements.push(current.data);
+            current = current.next;
+        }
+        return `List: ${elements.join(' -> ')} -> null`;
+    }
+}
+
+// Doubly Linked List Implementation
+class DoublyLinkedListNode {
+    constructor(data) {
+        this.data = data;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+class DoublyLinkedList {
+    constructor() {
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
+    }
+    
+    insertFront(data) {
+        const newNode = new DoublyLinkedListNode(data);
+        if (!this.head) {
+            this.head = this.tail = newNode;
+        } else {
+            newNode.next = this.head;
+            this.head.prev = newNode;
+            this.head = newNode;
+        }
+        this.size++;
+        return `Inserted ${data} at front`;
+    }
+    
+    insertBack(data) {
+        const newNode = new DoublyLinkedListNode(data);
+        if (!this.tail) {
+            this.head = this.tail = newNode;
+        } else {
+            this.tail.next = newNode;
+            newNode.prev = this.tail;
+            this.tail = newNode;
+        }
+        this.size++;
+        return `Inserted ${data} at back`;
+    }
+    
+    display() {
+        if (!this.head) return "List is empty";
+        const elements = [];
+        let current = this.head;
+        while (current) {
+            elements.push(current.data);
+            current = current.next;
+        }
+        return `List: null <- ${elements.join(' <-> ')} -> null`;
+    }
+}
+
 // Stack Implementation
 class Stack {
     constructor() {
@@ -78,6 +198,110 @@ class Stack {
     
     display() {
         return this.isEmpty() ? "Stack is empty" : `Stack: [${this.items.join(', ')}]`;
+    }
+}
+
+// Queue Implementation
+class Queue {
+    constructor() {
+        this.items = [];
+    }
+    
+    enqueue(element) {
+        this.items.push(element);
+        return `Enqueued ${element}`;
+    }
+    
+    dequeue() {
+        if (this.isEmpty()) return "Queue is empty";
+        return `Dequeued ${this.items.shift()}`;
+    }
+    
+    front() {
+        if (this.isEmpty()) return "Queue is empty";
+        return `Front element: ${this.items[0]}`;
+    }
+    
+    isEmpty() {
+        return this.items.length === 0;
+    }
+    
+    display() {
+        return this.isEmpty() ? "Queue is empty" : `Queue: [${this.items.join(', ')}]`;
+    }
+}
+
+// Priority Queue Implementation
+class PriorityQueue {
+    constructor() {
+        this.items = [];
+    }
+    
+    enqueue(element, priority) {
+        const queueElement = { element, priority };
+        let added = false;
+        
+        for (let i = 0; i < this.items.length; i++) {
+            if (queueElement.priority < this.items[i].priority) {
+                this.items.splice(i, 0, queueElement);
+                added = true;
+                break;
+            }
+        }
+        
+        if (!added) this.items.push(queueElement);
+        return `Enqueued ${element} with priority ${priority}`;
+    }
+    
+    dequeue() {
+        if (this.isEmpty()) return "Priority Queue is empty";
+        const item = this.items.shift();
+        return `Dequeued ${item.element} (priority: ${item.priority})`;
+    }
+    
+    isEmpty() {
+        return this.items.length === 0;
+    }
+    
+    display() {
+        if (this.isEmpty()) return "Priority Queue is empty";
+        const display = this.items.map(item => `${item.element}(${item.priority})`).join(', ');
+        return `PriorityQueue: [${display}]`;
+    }
+}
+
+// Deque Implementation
+class Deque {
+    constructor() {
+        this.items = [];
+    }
+    
+    addFront(element) {
+        this.items.unshift(element);
+        return `Added ${element} to front`;
+    }
+    
+    addRear(element) {
+        this.items.push(element);
+        return `Added ${element} to rear`;
+    }
+    
+    removeFront() {
+        if (this.isEmpty()) return "Deque is empty";
+        return `Removed ${this.items.shift()} from front`;
+    }
+    
+    removeRear() {
+        if (this.isEmpty()) return "Deque is empty";
+        return `Removed ${this.items.pop()} from rear`;
+    }
+    
+    isEmpty() {
+        return this.items.length === 0;
+    }
+    
+    display() {
+        return this.isEmpty() ? "Deque is empty" : `Deque: [${this.items.join(', ')}]`;
     }
 }
 

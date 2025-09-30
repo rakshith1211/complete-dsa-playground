@@ -19,18 +19,45 @@ This project also includes an interactive web interface that demonstrates the sa
 
 ### 🔹 Data Structures
 
-- Linked List (Singly)
-- Stack (Coming Soon)
-- Queue (Coming Soon)
-- Trees (Coming Soon)
-- Graphs (Coming Soon)
+**Linear Data Structures:**
+- Singly Linked List - O(1) insert/delete at front, O(n) at end
+- Doubly Linked List - O(1) insert/delete at both ends
+- Circular Linked List - Circular reference implementation
+- Stack (Array-based) - O(1) push/pop operations
+- Queue (Array-based) - O(1) enqueue, O(n) dequeue
+- Priority Queue - O(n) insert, O(1) dequeue
+- Deque (Double-ended Queue) - O(1) operations at both ends
+
+**Tree Data Structures:**
+- Binary Search Tree - O(log n) avg, O(n) worst case
+- AVL Tree (Self-balancing) - O(log n) guaranteed
+- Min Heap - O(log n) insert/extract, O(1) peek
+
+**Graph Data Structures:**
+- Adjacency List representation
+- BFS (Breadth-First Search) - O(V + E)
+- DFS (Depth-First Search) - O(V + E)
+- Dijkstra's Shortest Path - O(V²) or O(E log V)
+
+**Hash-based:**
+- Hash Table with collision handling - O(1) avg operations
 
 ### 🔹 Algorithms
 
-- **Sorting**: Merge Sort
-- **Searching** (Coming Soon)
+**Sorting Algorithms:**
+- Bubble Sort - O(n²) time, O(1) space
+- Selection Sort - O(n²) time, O(1) space
+- Insertion Sort - O(n²) time, O(1) space
+- Merge Sort - O(n log n) time, O(n) space
+- Quick Sort - O(n log n) avg, O(n²) worst
+- Heap Sort - O(n log n) time, O(1) space
+- Radix Sort - O(d×(n+k)) time, O(n+k) space
 
-Each includes time & space complexity notes
+**Searching Algorithms:**
+- Linear Search - O(n) time, O(1) space
+- Binary Search - O(log n) time, O(1) space
+
+Each includes comprehensive time & space complexity analysis
 
 ### 🔹 Languages
 
@@ -49,10 +76,12 @@ Each implementation includes comprehensive unit tests covering normal cases, edg
 
 ### 🔹 Web Interface
 
-- Interactive demonstrations in the browser
-- Real-time visualizations
-- No installation required
-- Responsive design for all devices
+- **Complete Interactive Playground** - All 12 data structures + 11 algorithms
+- **Real-time Operations** - Insert, delete, search, traverse with live feedback
+- **Algorithm Visualization** - Step-by-step sorting and searching demonstrations
+- **Cross-platform** - Works in any modern browser
+- **Educational Focus** - Time/space complexity displayed for each operation
+- **Responsive Design** - Optimized for desktop, tablet, and mobile
 
 ## ✅ Unit Tests
 
